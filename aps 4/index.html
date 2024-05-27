@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Previsão do Tempo</h1>
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Digite o nome da cidade (Ex: São José dos Pinhas, BR)">
+            <button id="search-button">Buscar</button>
+        </div>
+        <div id="error-message" class="error-message"></div>
+        <div class="weather-info">
+            <div class="mensagemTempIcon mostrar-mensagem" id="weather-icon"></div>
+            <div class="mensagemTemp" id="weather-description"></div>
+            <div class="mensagemTemp" id="temperature"></div>
+            <div class="mensagemTemp" id="feels-like"></div>
+            <div class="mensagemTemp" id="min-max-temp"></div>
+            <div class="mensagemTemp" id="humidity"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
