@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const apiKey = 'bc7062fe448103e662d524f3b6ca68a7'; // Insira sua chave de API do OpenWeatherMap aqui
+    const apiKey = 'bc7062fe448103e662d524f3b6ca68a7';
 
     const cityInput = document.getElementById('city-input');
     const searchButton = document.getElementById('search-button');
+    const currentLocationButton = document.getElementById('current-location-button');
 
     searchButton.addEventListener('click', function() {
         const city = cityInput.value.trim();
@@ -12,6 +13,45 @@ document.addEventListener('DOMContentLoaded', function() {
             displayErrorMessage('Por favor, insira o nome da cidade.');
         }
     });
+
+    currentLocationButton.addEventListener('click', function() {
+        getCurrentLocationWeather();
+    });
+
+    function getCurrentLocationWeather() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                getWeatherByCoordinates(latitude, longitude);
+            }, error => {
+                console.error('Erro ao obter a localização:', error);
+                displayErrorMessage('Não foi possível obter sua localização.');
+            });
+        } else {
+            console.error('Geolocalização não suportada.');
+            displayErrorMessage('Geolocalização não suportada.');
+        }
+    }
+//TRATANDO ERROS
+    function getWeatherByCoordinates(latitude, longitude) {
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    displayErrorMessage('Dados meteorológicos não encontrados.');
+                    throw new Error('Dados meteorológicos não encontrados.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayWeather(data);
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+    }
 
     function getWeatherByCity(city) {
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -31,13 +71,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Erro:', error);
             });
     }
-
+//DADOS DA PREVISÃO
     function displayWeather(data) {
         const weatherIcon = document.getElementById('weather-icon');
         weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}.png">`;
 
         const weatherDescription = document.getElementById('weather-description');
-        weatherDescription.textContent = data.weather[0].description;
+        translateWeatherDescription(data.weather[0].description)
+            .then(translatedDescription => {
+                weatherDescription.textContent = translatedDescription;
+            })
+            .catch(error => {
+                console.error('Erro ao traduzir descrição do clima:', error);
+            });
 
         const temperature = document.getElementById('temperature');
         temperature.textContent = `Temperatura: ${data.main.temp}°C`;
@@ -51,10 +97,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const humidity = document.getElementById('humidity');
         humidity.textContent = `Umidade: ${data.main.humidity}%`;
     }
-
+//MOSTRA MENSAGEM DE ERRO
     function displayErrorMessage(message) {
         const errorMessage = document.getElementById('error-message');
         errorMessage.textContent = message;
         errorMessage.classList.add('show');
+    }
+//API TRADUÇÃO
+    function translateWeatherDescription(description) {
+        const apiKey = 'YOUR_GOOGLE_TRANSLATE_API_KEY';
+        const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}&q=${description}&source=en&target=pt`;
+
+        return fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                return data.data.translations[0].translatedText;
+            })
+            .catch(error => {
+                console.error('Erro na tradução:', error);
+                return description;
+            });
     }
 });

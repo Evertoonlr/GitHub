@@ -1,3 +1,5 @@
+/*TAGS*/
+
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to top right, #A0522D, #DEB887, #FFF8DC);
@@ -6,6 +8,12 @@ body {
     height: 100vh;
     width: 100vw;
 }
+h1 {
+    text-align: center;
+    color: white;
+}
+
+/*CLASSES*/
 
 .container {
     max-width: 600px;
@@ -15,17 +23,70 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-h1 {
-    text-align: center;
-    color: white;
-}
-
 .search-container {
     text-align: center;
     margin-bottom: 20px;
 }
+.weather-info {
+    text-align: center;
+}
+#weather-icon {
+    margin: 20px 0;
+}
+.weather-info div {
+    margin-bottom: 10px;
+}
+.error-message {
+    text-align: center;
+    display: none;
+    color: 	#A52A2A;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    background: #DEB887;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 12px;
+}
+.error-message.show {
+    display: block;
+}
+.mensagemTemp{
+    color: white;
+}
+.mensagemTempIcon {
+    width: 10%;
+    height: 10%;
+    overflow: hidden;
+    transition: width 0.3s ease, height 0.3s ease;
+    background: transparent;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+.mostrar-mensagem{
+    width: auto;
+    height: auto;
+    background: #FFDEAD;
+}
 
+/*ID*/
+
+#current-location-button{
+    background-color: #CD853F;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 12px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 #city-input {
     padding: 10px;
     width: 60%;
@@ -43,53 +104,4 @@ h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.weather-info {
-    text-align: center;
-}
-
-#weather-icon {
-    margin: 20px 0;
-}
-
-.weather-info div {
-    margin-bottom: 10px;
-}
-.error-message {
-    text-align: center;
-    display: none;
-    color: 	#A52A2A;
-    font-weight: bold;
-    font-size: 16px;
-    margin-top: 10px;
-    background: #DEB887;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-radius: 12px;
-}
-
-.error-message.show {
-    display: block;
-}
-.mensagemTemp{
-    color: white;
-}
-.mensagemTempIcon {
-    width: 10%;
-    height: 10%;
-    overflow: hidden;
-    transition: width 0.3s ease, height 0.3s ease; /* Adicione uma transição suave */
-    background: transparent; /* Defina o fundo como transparente inicialmente */
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
-    margin-top: 10px;
-    border-radius: 12px;
-}
-
-.mostrar-mensagem{
-    width: auto; /* Altere a largura para auto quando o conteúdo for exibido */
-    height: auto; /* Altere a altura para auto quando o conteúdo for exibido */
-    background: #FFDEAD; /* Adicione a cor de fundo desejada */
 }
