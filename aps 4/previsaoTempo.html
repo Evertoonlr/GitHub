@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Previsão do Tempo</title>
+</head>
+<body>
+    <div id="cabecalho">
+        <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="index.html">Página Inicial</a>
+            <a href="previsaoTempo.html">Previsão do tempo</a>
+            <a href="salaCCO.html">Mapeamento Sala CCO</a>
+            <a href="#contact">Contact</a>
+            <a href="#custom">Custom</a>
+            <a href="#support">Support</a>
+            <a href="#tools">Tools</a>
+        </div>
+        </div>
+        <a href="index.html"><img class="logoHeader" src="image/logo.png"/></a>
+    </div>
+        <script src="scriptCabecalho.js"></script>
+    <div class="container">
+        <h1>Previsão do Tempo</h1>
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Digite o nome da cidade (Ex: São José dos Pinhas, BR)">
+            <button id="search-button" class="glow-on-hover">Buscar</button>
+            <button id="current-location-button" class="current-location-button">Localização Atual</button>
+            <div class="box-3">
+        </div>
+        <div id="error-message" class="error-message"><img src="erro.png" class=""/></div>
+        <div class="weather-info">
+            <div class="mensagemTempIcon mostrar-mensagem" id="weather-icon"></div>
+            <div class="mensagemTemp" id="weather-description"></div>
+            <div class="mensagemTemp" id="temperature"></div>
+            <div class="mensagemTemp" id="feels-like"></div>
+            <div class="mensagemTemp" id="min-max-temp"></div>
+            <div class="mensagemTemp" id="humidity"></div>
+        </div>
+    </div>
+    <script src="scriptPrevisaoTempo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

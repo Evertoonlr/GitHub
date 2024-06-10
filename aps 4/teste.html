@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeamento Sala CCO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bodyCCO">
+    <div id="cabecalho">
+        <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="index.html">Página Inicial</a>
+            <a href="previsaoTempo.html">Previsão do tempo</a>
+            <a href="salaCCO.html">Mapeamento Sala CCO</a>
+            <a href="#contact">Contact</a>
+            <a href="#custom">Custom</a>
+            <a href="#support">Support</a>
+            <a href="#tools">Tools</a>
+        </div>
+        <script src="scriptCabecalho.js"></script>
+        </div>
+        <a href="index.html"><img class="logoHeader" src="image/logo.png"/></a>
+    </div>
+    <div class="sala">
+        <div class="inputs-container">
+            <a class="preInput">ID:</a>
+            <input type="number" id="idCadeira" placeholder="ID">
+            <a class="preInput">NOME:</a>
+            <input type="text" id="nomeAdicionar" placeholder="Digite o nome">
+            <button onclick="adicionarNome()">Adicionar</button>
+        </div>
+        <!-- Primeiro Bloco -->
+        <div class="bloco">
+            <div class="fileira">
+                <div class="assento" id="assento19" onclick="alterarNome(19)">
+                    <div class="id">19</div>
+                    <div class="nome"></div> <!-- Aqui é onde vamos exibir o nome -->
+                </div>
+                <div class="assento" id="assento20" onclick="alterarNome(20)">
+                    <div class="id">20</div>
+                    <div class="nome"></div> <!-- Aqui é onde vamos exibir o nome -->
+                </div>
+            </div>
+            <!-- Adicione mais assentos conforme necessário -->
+        </div>
+        <!-- Segundo Bloco -->
+        <div class="bloco">
+            <!-- Adicione mais fileiras conforme necessário -->
+        </div>
+    </div>
+
+    <script>
+        function adicionarNome() {
+            var id = document.getElementById("idCadeira").value;
+            var nome = document.getElementById("nomeAdicionar").value;
+            var assento = document.getElementById("assento" + id).querySelector(".nome");
+            if (assento) {
+                assento.textContent = nome;
+            }
+        }
+
+        function alterarNome(id) {
+            var nome = prompt("Digite o novo nome:");
+            if (nome !== null) {
+                var assento = document.getElementById("assento" + id).querySelector(".nome");
+                if (assento) {
+                    assento.textContent = nome;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

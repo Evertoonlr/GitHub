@@ -3,31 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Previsão do Tempo</title>
+    <title>Tela Principal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Previsão do Tempo</h1>
-        <div class="search-container">
-            <input type="text" id="city-input" placeholder="Digite o nome da cidade (Ex: São José dos Pinhas, BR)">
-            <button id="search-button" class="glow-on-hover">Buscar</button>
-            <button id="current-location-button">Localização Atual</button>
-            <div class="box-3">
+    <div id="cabecalho">
+        <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="index.html">Página Inicial</a>
+            <a href="previsaoTempo.html">Previsão do tempo</a>
+            <a href="salaCCO.html">Mapeamento Sala CCO</a>
+            <a href="#contact">Contact</a>
+            <a href="#custom">Custom</a>
+            <a href="#support">Support</a>
+            <a href="#tools">Tools</a>
         </div>
-        <div id="error-message" class="error-message"></div>
-        <!-- DADOS -->
-        <div class="weather-info">
-            <div class="mensagemTempIcon mostrar-mensagem" id="weather-icon"></div>
-            <div class="mensagemTemp" id="weather-description"></div>
-            <div class="mensagemTemp" id="temperature"></div>
-            <div class="mensagemTemp" id="feels-like"></div>
-            <div class="mensagemTemp" id="min-max-temp"></div>
-            <div class="mensagemTemp" id="humidity"></div>
         </div>
+        <a href="index.html"><img class="logoHeader" src="image/logo.png"/></a>
     </div>
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <div class="containerApresentacao">
+            <div class="headerApresentacao">
+                <div class="profile-pic">
+                    <img src="image/perfil.jpeg" alt="Foto de Perfil">
+                </div>
+                <div class="personal-info">
+                    <h1>EVERTON DA SILVA LOURENÇO </h1>
+                    <p>Email:evertoonslr@gmail.com</p>
+                    <p>Telefone: (41)988473022</p>
+                    <p>Endereço: Rua Governador Boca de 09, 09 </p>
+                </div>
+            </div>
+    
+            <section class="qualifications">
+                <h2>Qualificações</h2>
+                <ul>
+                    <li>Bacharelado em Engenharia de Software / Cursando </li>
+                    <li>Desenvolvimento de sistemas - SENAI, 2019</li>
+                    <li>Conhecimento em pacote Office</li>
+                    <li>Jogador Profissional de Bulica</li>
+                </ul>
+            </section>
+    
+            <section class="experience">
+                <h2>Experiência Profissional</h2>
+                <div class="job">
+                    <h3>Almoxarife</h3>
+                    <p><strong>Período:</strong> Dezembro 2022 - Presente</p>
+                    <p>Organização de estoque; entrega e recebimento de mercadorias, controle de combustível.</p>
+                </div>
+    
+                <div class="job">
+                    <h3>Vendedor</h3>
+                    <p><strong>Período:</strong> Março 2020 - Junho 2022</p>
+                    <p>Vendas de materiais para construção, organização de estoque, entregador de materiais.</p>
+                </div>
+            </section>
+        </div>
+        <!-- LINKS JAVASCRIPT -->
+        <script src="scriptCabecalho.js"></script>
 </body>
 </html>

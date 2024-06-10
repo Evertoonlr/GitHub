@@ -2,11 +2,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to top right, #A0522D, #DEB887, #FFF8DC);
+    background: black;
     margin: 0;
     padding: 0;
     height: 100vh;
     width: 100vw;
+    padding-top: 180px;
 }
 h1 {
     text-align: center;
@@ -14,14 +15,14 @@ h1 {
 }
 
 /*CLASSES*/
-
 .container {
     max-width: 600px;
-    margin: 50px auto;
+    margin: 65px auto;
     padding: 20px;
-    background-color: #8B4513;
+    background-color: #696969;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 .search-container {
     text-align: center;
@@ -29,9 +30,6 @@ h1 {
 }
 .weather-info {
     text-align: center;
-}
-#weather-icon {
-    margin: 20px 0;
 }
 .weather-info div {
     margin-bottom: 10px;
@@ -43,7 +41,7 @@ h1 {
     font-weight: bold;
     font-size: 16px;
     margin-top: 10px;
-    background: #DEB887;
+    background: white;
     overflow-y: auto;
     overflow-x: hidden;
     border-radius: 12px;
@@ -69,13 +67,279 @@ h1 {
 .mostrar-mensagem{
     width: auto;
     height: auto;
-    background: #FFDEAD;
+    background: white;
+}
+.telaPrincipal{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to top right, #A9A9A9, #D3D3D3, #DCDCDC);
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+.logoCabecalho{
+    padding-top: 8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #A52A2A;
+    
+}
+.cssMessage{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    z-index: 9999;
+    background-color: #800000;
+    border-radius: 5px;
+    color: White;
+    text-align: center;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+.dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+.containerApresentacao{
+    max-width: 600px;
+    margin: 65px auto;
+    padding: 20px;
+    background-color: #696969;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/*ID*/
+.containerApresentacao {
+    max-width: 800px;
+    margin-top: 60px;
+    padding-top: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 60px 0 #696969;
+}
 
+.headerApresentacao {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.personal-info h1 {
+    margin: 0;
+    color: #333;
+}
+
+.personal-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.qualifications h2,
+.experience h2 {
+    margin-top: 40px;
+    color: #333;
+}
+
+.qualifications ul,
+.experience ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.qualifications li,
+.experience li {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.job {
+    margin-bottom: 30px;
+}
+
+.job h3 {
+    margin: 0;
+    color: #333;
+}
+
+.job p {
+    margin: 5px 0;
+    color: #666;
+}
+.nomeSala{
+    padding: 300%;
+}
+
+.logoHeader{
+    position: fixed;
+    margin-top: -12px;
+    margin-left: 42%;
+    width: 60px;
+    height: 90px;
+}
+.dropbtn {
+    background-color: #A9A9A9;
+    color: black;
+    padding: 10px 50px 10px 20px;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-left: 20%;
+    background-image: url('image/setaMenu.svg');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover {
+    background-color: #DCDCDC;
+} 
+.bodyCCO {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 65px);
+    margin: 0;
+    background-color: black;
+    padding-top: 65px;
+}
+.sala {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 55px;
+    margin-top: 40%;
+    position: relative;
+}
+.bloco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fileira {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.assento {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+}
+.assento:hover {
+    background-color: #f0f0f0; /* Nova cor de fundo ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+/* Adicione uma transição de suavização para a mudança de cor de fundo dos assentos quando houver um nome */
+.assento:hover .nome {
+    color: blue; /* Nova cor do texto ao passar o mouse */
+    transition: color 0.3s ease; /* Transição suave */
+}
+.corredor {
+    width: 90px;
+}
+.corredorLinear{
+    height: 50px;
+}
+.id {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: black;
+}
+.inputs-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 700px;
+}
+.preInput{
+    font-weight: bold;
+    font-size: larger;
+}
+.btnAdicionar{
+    padding: 13px 25px;
+    background-color: #778899;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+} 
+.btnAdicionar:hover {
+    background-color: #DCDCDC;
+}
+.bloco1{
+    margin-top: 100px;
+}
+.bloco2{
+    margin-top: -180px;
+}
+/*ID*/
+#weather-icon {
+    margin: 20px 0;
+}
+#cssInner{
+    margin: 0 auto; 
+    box-shadow: 5px 5px 5px black;
+    border-radius: 5px;
+}
 #current-location-button{
-    background-color: #CD853F;
+    background-color: #778899;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -86,22 +350,64 @@ h1 {
     margin: 12px 2px;
     cursor: pointer;
     border-radius: 5px;
+    font-weight: bold;
 }
 #city-input {
     padding: 10px;
     width: 60%;
     border-radius: 5px;
-    border: 3px solid #FFF8DC;
-    background-color: #DEB887;
+    border: 3px solid #778899;
+    background-color: #DCDCDC;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: 	#778899;
 }
 
 #search-button {
     padding: 13px 30px;
-    background-color: #CD853F;
+    background-color: #778899;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+}
+#cabecalho {
+    margin-bottom: 0;
+    background-color: black;
+    width: 100%;
+    height: 65px;
+    box-shadow: 10px 10px 10px #A9A9A9;
+    position: fixed;
+    top: 0;
+    z-index: 999; /* Ajuste o índice z para garantir que o cabeçalho fique abaixo do conteúdo */
+}
+  #myInput {
+    box-sizing: border-box;
+    background-image: url('image/search.svg');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+#myInput:focus {outline: 3px solid #ddd;}
+#idCadeira{
+    padding: 10px;
+    width: 5%;
+    border-radius: 5px;
+    border: 3px solid #778899;
+    background-color: #DCDCDC;
+    font-family: Arial, Helvetica, sans-serif;
+    color: 	#778899;
+}
+#nomeAdicionar{
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    border: 3px solid #778899;
+    background-color: #DCDCDC;
+    font-family: Arial, Helvetica, sans-serif;
+    color: 	#778899;
 }
